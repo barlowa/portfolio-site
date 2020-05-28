@@ -35,6 +35,8 @@ const Project = ({ title, image, children, gallery, thumbnailWidth }) => {
 
 	const [isGalleryExpanded, setIsGalleryExpanded] = useState(false)
 
+	const [preselectedGalleryPicture, setPreselectedGalleryPicture] = useState()
+
 	const thumbnailtransforms = `/c_scale,w_${thumbnailWidth}`
 
 	function cloudinaryUrlTemplate({ version, public_id, format }, transforms) {
@@ -56,6 +58,11 @@ const Project = ({ title, image, children, gallery, thumbnailWidth }) => {
 		}
 	}, [gallery, thumbnailtransforms])
 
+	function expandGallery(picture) {
+		setPreselectedGalleryPicture(picture)
+		setIsGalleryExpanded(true)
+	}
+
 	return (
 		<Gutter>
 			<Divider>
@@ -64,18 +71,19 @@ const Project = ({ title, image, children, gallery, thumbnailWidth }) => {
 						<InlineImage
 							src={image}
 							onClick={() => {
-								setIsGalleryExpanded(true)
+								expandGallery(image)
 							}}
 						/>
 						<GalleryFilmStrip
 							pictures={galleryPictures}
 							thumbnailHeight={thumbnailWidth}
-							chosenPicture={() => setIsGalleryExpanded(true)}
+							onThumbnailClick={({ picture }) => expandGallery(picture)}
 						/>
 					</div>
 					<TextBlock title={title}>{children}</TextBlock>
 					{isGalleryExpanded && (
 						<ExpandedGallery
+							openingPicture={preselectedGalleryPicture}
 							pictures={galleryPictures}
 							thumbnailHeight={thumbnailWidth}
 							close={() => setIsGalleryExpanded(false)}

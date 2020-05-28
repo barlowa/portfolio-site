@@ -7,16 +7,16 @@ const GalleryWrapper = styled.div`
 	display: flex;
 	overflow-y: scroll;
 `
-const GalleryFilmStrip = ({ pictures, thumbnailHeight, chosenPicture }) => {
+const GalleryFilmStrip = ({ pictures, thumbnailHeight, onThumbnailClick }) => {
 	return (
 		<GalleryWrapper>
 			{pictures &&
-				pictures.map(({ key, thumbnail }, index) => (
+				pictures.map((picture) => (
 					<Thumbnail
-						key={key}
-						src={thumbnail}
+						key={picture.key}
+						src={picture.thumbnail}
 						height={thumbnailHeight}
-						onClick={() => chosenPicture(index)}
+						onClick={() => onThumbnailClick(picture)}
 					/>
 				))}
 		</GalleryWrapper>

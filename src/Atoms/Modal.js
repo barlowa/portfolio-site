@@ -12,7 +12,7 @@ const Backdrop = styled.div`
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-color: black;
+	background-color: #000000d9;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -26,7 +26,6 @@ const Backdrop = styled.div`
 const ModalBody = styled.div`
 	min-width: 400px;
 	margin: 0 auto;
-	background-color: white;
 	.scrollable-area {
 		max-height: calc(100vh - 20px);
 		max-width: calc(100vw - 20px);
