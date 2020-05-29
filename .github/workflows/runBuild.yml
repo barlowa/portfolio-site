@@ -15,21 +15,15 @@ jobs:
            uses: actions/setup-node@v1
            with:
               node-version: ${{ matrix.node-version }}
-         - name: Install Packages
+         - name: Install NPM Packages
            run: npm install
-         - name: Build SPA
+         - name: Running Unit Tests
+           run: npm run test a
+         - name: Building SPA
            run: npm run build
-         #    - name: Deploy to github-pages
-         #      uses: peaceiris/actions-gh-pages@v3
-         #      with:
-         #        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-         #        publish_dir: ./build
-         - name: List output files
-           run: ls
-         - name: Deploy
+         - name: Deploying SPA
            uses: SamKirkland/FTP-Deploy-Action@3.1.1
            with:
               ftp-server: ${{ secrets.FTP_ADDRESS }}
               ftp-username: ${{ secrets.FTP_USERNAME }}
               ftp-password: ${{ secrets.FTP_PASSWORD }}
-              local-dir: build
