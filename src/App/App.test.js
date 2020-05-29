@@ -3,8 +3,13 @@ import React from 'react'
 
 import App from './App'
 
-test('renders learn react link', () => {
-	const { getByText } = render(<App />)
-	const linkElement = getByText(/learn react/i)
-	expect(linkElement).toBeInTheDocument()
+describe('Main header', () => {
+	const app = render(<App />)
+	const header = app.getByTestId('Header')
+	const logo = app.getByTestId('Logo')
+	it('should render the logo', () => {
+		expect(header).toContainElement(logo)
+		expect(logo).toHaveClass('logo')
+		expect(logo).toContainHTML('<a href="/">Alex Barlow</a>')
+	})
 })

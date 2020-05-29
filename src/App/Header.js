@@ -36,10 +36,10 @@ const StyledHeaderWrapper = styled.div`
 
 const Header = () => {
 	return (
-		<StyledHeaderWrapper>
+		<StyledHeaderWrapper data-testid="Header">
 			<Gutter>
 				<div className="positioning">
-					<div className="logo">
+					<div data-testid="Logo" className="logo">
 						<Link to="/">Alex Barlow</Link>
 					</div>
 					<div className="navigation">
