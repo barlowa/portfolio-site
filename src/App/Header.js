@@ -46,7 +46,6 @@ const Header = () => {
 						<Link to="/#projects">Recent Projects</Link>
 						<Link to="/#about">More About Me</Link>
 						<Link to="/#uses">/uses</Link>
-						<Link to="/anotherpage">Another page</Link>
 					</div>
 				</div>
 			</Gutter>
