@@ -9,7 +9,6 @@ const useFetch = (url, options) => {
 		const abortController = new AbortController()
 		const signal = abortController.signal
 		const getData = async () => {
-			console.log('running', signal, abortController)
 			try {
 				setIsLoading(true)
 				const response = await fetch(url, options)

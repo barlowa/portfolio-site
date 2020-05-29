@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Modal, InlineImage } from '../Atoms'
+import { Modal } from '../Atoms'
 import { GalleryFilmStrip } from '.'
 import styled from 'styled-components'
 
 const ScaledImage = styled.img.attrs(() => ({
 	height: '100%',
 }))`
-	width: 100vw;
+	width: 100%;
 	height: 100%;
 	object-fit: contain;
 `
@@ -34,6 +34,11 @@ const ExpandedGallery = ({ close, pictures, openingPicture, thumbnailHeight }) =
 	)
 }
 
-ExpandedGallery.propTypes = {}
+ExpandedGallery.propTypes = {
+	close: PropTypes.func.isRequired,
+	openingPicture: PropTypes.string.isRequired,
+	pictures: PropTypes.array.isRequired,
+	thumbnailHeight: PropTypes.string.isRequired,
+}
 
 export default ExpandedGallery

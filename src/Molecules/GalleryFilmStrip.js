@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const GalleryWrapper = styled.div`
 	display: flex;
 	overflow-y: scroll;
+	width: 100%;
 `
 const GalleryFilmStrip = ({ pictures, thumbnailHeight, onThumbnailClick }) => {
 	return (
