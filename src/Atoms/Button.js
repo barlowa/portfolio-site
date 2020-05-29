@@ -6,7 +6,7 @@ const ButtonStyle = styled.button`
 	background-color: ${({ theme: { secondary } }) => secondary};
 	color: ${({ theme: { secondaryHighlight } }) => secondaryHighlight};
 	font-size: 20px;
-	font-family: consolas;
+	font-family: consolas-regular;
 	cursor: pointer;
 	padding: 15px;
 	border-style: none;

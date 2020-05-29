@@ -9,7 +9,7 @@ const StyledHeaderWrapper = styled.div`
 	top: 0;
 	background-color: ${({ theme: { header } }) => header};
 	padding: 15px 0;
-	font-family: consolas;
+	font-family: consolas-regular;
 
 	.positioning {
 		height: 100%;

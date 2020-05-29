@@ -7,6 +7,14 @@ body {
 	background: #fbfbfb;
 	font-size: 20px;
 }
+@font-face {
+	font-family: 'consolas-bold-italic';
+	src: local('ConsolasBoldItalic'), url(./App/Themes/ConsolasBoldItalic.ttf) format('truetype');
+}
+@font-face {
+	font-family: 'consolas-regular';
+	src: local('ConsolasBoldItalic'), url(./App/Themes/Consolas.ttf) format('truetype');
+}
 
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;

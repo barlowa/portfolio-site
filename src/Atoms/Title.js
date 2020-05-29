@@ -11,9 +11,7 @@ const TitleStyle = styled.span`
 	background-color: ${({ theme: { primary } }) => primary};
 	color: ${({ theme: { primaryHighlight } }) => primaryHighlight};
 	font-size: 60px;
-	font-family: consolas;
-	font-style: italic;
-	font-weight: bold;
+	font-family: consolas-bold-italic;
 	padding: 5px;
 	@media only screen and (max-width: ${({ theme: { tabletBreakpoint } }) => tabletBreakpoint}) {
 		font-size: 40px;
