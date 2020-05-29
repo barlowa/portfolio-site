@@ -24,10 +24,12 @@ jobs:
          #      with:
          #        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
          #        publish_dir: ./build
+         - name: CheckFiles
+          run: ls
          - name: Deploy
            uses: SamKirkland/FTP-Deploy-Action@3.1.1
            with:
               ftp-server: ${{ secrets.FTP_ADDRESS }}
               ftp-username: ${{ secrets.FTP_USERNAME }}
               ftp-password: ${{ secrets.FTP_PASSWORD }}
-              local-dir: ./build
+              local-dir: build
