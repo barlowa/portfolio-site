@@ -13,22 +13,41 @@ const ScaledImage = styled.img.attrs(() => ({
 `
 
 const Layout = styled.div`
-	display: grid;
-	grid-template-rows: 80vh auto;
-	justify-items: center;
-	grid-gap: 40px;
+	display: flex;
+	height: calc(100vh - 20px);
+	width: calc(100vw - 20px);
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+
+	.preview-picture {
+		height: 80vh;
+	}
+	.gallery {
+		width: 90vw;
+	}
+	@media only screen and (max-width: ${({ theme: { tabletBreakpoint } }) => tabletBreakpoint}) {
+		height: 80vh;
+		.preview-picture {
+			height: 60vh;
+		}
+	}
 `
 const ExpandedGallery = ({ close, pictures, openingPicture, thumbnailHeight }) => {
 	const [selectedPicture, setSelectedPicture] = useState()
 	return (
 		<Modal close={close}>
 			<Layout thumbnailHeight={thumbnailHeight}>
-				<ScaledImage src={selectedPicture || openingPicture} />
-				<GalleryFilmStrip
-					pictures={pictures}
-					thumbnailHeight={thumbnailHeight}
-					onThumbnailClick={({ picture }) => setSelectedPicture(picture)}
-				/>
+				<div className="preview-picture">
+					<ScaledImage src={selectedPicture || openingPicture} />
+				</div>
+				<div className="gallery">
+					<GalleryFilmStrip
+						pictures={pictures}
+						thumbnailHeight={thumbnailHeight}
+						onThumbnailClick={({ picture }) => setSelectedPicture(picture)}
+					/>
+				</div>
 			</Layout>
 		</Modal>
 	)

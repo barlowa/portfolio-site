@@ -9,7 +9,7 @@ const ThumbnailImage = styled.img.attrs(({ height }) => ({
 `
 const ThumbnailWrapper = styled.div`
 	outline: 1px solid ${({ theme: { secondary } }) => secondary};
-	display: flex;
+	display: inline-block;
 	margin: 10px 20px 1px 1px;
 	padding: 5px;
 	height: 100%;

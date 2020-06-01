@@ -24,8 +24,8 @@ const Backdrop = styled.div`
 `
 
 const ModalBody = styled.div`
-	min-width: 400px;
-	margin: 0 auto;
+	/* min-width: 400px;
+	margin: 0 auto; */
 	.scrollable-area {
 		max-height: calc(100vh - 20px);
 		max-width: calc(100vw - 20px);
