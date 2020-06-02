@@ -15,7 +15,7 @@ const Layout = styled.div`
 		justify-items: center;
 	}
 `
-const Section = ({ image, children, title, imageWidth }) => {
+const ImageSection = ({ image, children, title, imageWidth }) => {
 	return (
 		<Gutter>
 			<Divider>
@@ -27,14 +27,14 @@ const Section = ({ image, children, title, imageWidth }) => {
 		</Gutter>
 	)
 }
-Section.defaultProps = {
+ImageSection.defaultProps = {
 	imageWidth: '250px',
 }
-Section.propTypes = {
+ImageSection.propTypes = {
 	children: PropTypes.any.isRequired,
 	image: PropTypes.string,
 	imageWidth: PropTypes.string,
 	title: PropTypes.string,
 }
 
-export default Section
+export default ImageSection
