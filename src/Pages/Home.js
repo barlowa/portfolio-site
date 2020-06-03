@@ -1,9 +1,9 @@
 import { useHistory, useLocation } from 'react-router'
 import React, { useMemo } from 'react'
 
-import { InlineButtons, Heading, TextBlock } from '../Molecules'
+import { InlineButtons, Heading } from '../Molecules'
 import { Project, HeroSection, ImageSection, BullettedSection } from '../Organisms'
-import { Title } from '../Atoms'
+import { Title, Highlight } from '../Atoms'
 import { useSmoothScrolling, useFetch } from '../Hooks'
 
 const cliftonBridge =
@@ -108,76 +108,71 @@ const Home = () => {
 					This is a short list of the hardware and software I own or use on a regular basis. Based on the
 					wes-bos <a href="uses.tech">uses.tech</a> initiative.
 				</p>
-				<TextBlock title="Text Editor">
-					<p>
-						<strong>Visual Studio Code:</strong> Definitely my favourite editor. I was a reluctant
-						Sublime convert but the switch was more than worth it.
-					</p>
-					<p>
-						<strong>Theme:</strong> Dark++, because developers can’t think in anything other than dark
-						mode.
-					</p>
-					<p>
-						<strong>Extensions:</strong> I don’t have too many global recommendations since it depends a
-						lot on what you’re working with, but I’ll mention:
-					</p>
-					<ul>
-						<li>
-							<strong>Bracket Pair Colorizer:</strong> This extension makes it very easy to distinguish
-							where a code block ends by assigning the same colour to the opening and closing brackets.
-						</li>
-						<li>
-							<strong>Prettier:</strong> I have learnt to love prettier. I used to absolutely hate the
-							way it changed my code. But now I am used to it, my code has never looked more uniform. I
-							have it running on save and it almost takes formatting out of the equation which gives
-							you more brain bandwidth to think about your actual code.
-						</li>
-						<li>
-							<strong>GitLens:</strong> Yes, VS Code has the very useful Timeline view now, but this
-							extension is still useful for seeing inline commits and git blame is always fun!
-						</li>
-					</ul>
-				</TextBlock>
+			</BullettedSection>
+			<BullettedSection title="Text Editor">
+				<li>
+					<Highlight>Visual Studio Code:</Highlight> Definitely my favourite editor. I was a reluctant
+					Sublime convert but the switch was more than worth it.
+				</li>
+				<li>
+					<Highlight>Theme:</Highlight> Dark++, because developers can’t think in anything other than
+					dark mode.
+				</li>
+				<li>
+					<Highlight>Extensions:</Highlight> I don’t have too many global recommendations since it
+					depends a lot on what you’re working with, but I’ll mention:
+				</li>
+				<li>
+					<Highlight>Bracket Pair Colorizer:</Highlight> This extension makes it very easy to distinguish
+					where a code block ends by assigning the same colour to the opening and closing brackets.
+				</li>
+				<li>
+					<Highlight>Prettier:</Highlight> I have learnt to love prettier. I used to absolutely hate the
+					way it changed my code. But now I am used to it, my code has never looked more uniform. I have
+					it running on save and it almost takes formatting out of the equation which gives you more
+					brain bandwidth to think about your actual code.
+				</li>
+				<li>
+					<Highlight>GitLens:</Highlight> Yes, VS Code has the very useful Timeline view now, but this
+					extension is still useful for seeing inline commits and git blame is always fun!
+				</li>
+			</BullettedSection>
 
-				<TextBlock title="Development">
-					<ul>
-						<li>
-							<strong>Java Script:</strong> This is my main language these days, but React is the main
-							library I use to build anything front-end related at the moment. I am interested in VUE
-							and I have dabbled with angular before, but I prefer Reacts less opinionated approach. I
-							am also interested in branching out and learning swift.
-						</li>
-						<li>
-							<strong>CSS:</strong> I love CSS! Therefore, I love for Styled Components! I like the way
-							you can directly make changes to CSS in the file you are working on, or export it and use
-							it anywhere you want! Also, not having to compile the CSS separately is nice.
-						</li>
-						<li>
-							<strong>State Management:</strong> For state management, Redux has its place in larger
-							applications. The state tree and actions can get overly complicated and difficult to
-							manage; not to mention there is a lot of boilerplate and opportunity to misuse it. This
-							is where something like Reacts’ context API steps in; with the addition of the useContext
-							hook, I have become a convert.
-						</li>
-					</ul>
-				</TextBlock>
-				<Title>Desk Set Up</Title>
-				<ul>
-					<li>
-						<strong>Monitor:</strong> Acer cb271hk Fully adjustable 4K 10-bit IPS monitor. I find that I
-						am a lot more productive with more desktop space, since it means I don’t need to scroll as
-						much through my code, especially if the monitor is in portrait mode; the novelty wore off
-						that quite quickly though.
-					</li>
-					<li>
-						<strong>Laptop:</strong>My current laptop is a Macbook pro 15 inch mid 2015 2.5ghz 16gb ram
-						512gb SSD. This laptop has been a trooper, it has survived a full bottle of peroni over the
-						keyboard with no ill effects (wasn’t even my fault, I had to tear it down and clean it
-						though). I don’t see the need to replace it just yet, it still does everything I need it to
-						do. The 16 inch macbook is looking like a good upgrade in a few years, especially since the
-						keyboard doesn’t break now.
-					</li>
-				</ul>
+			<BullettedSection title="Development">
+				<li>
+					<Highlight>Java Script:</Highlight> This is my main language these days, but React is the main
+					library I use to build anything front-end related at the moment. I am interested in VUE and I
+					have dabbled with angular before, but I prefer Reacts less opinionated approach. I am also
+					interested in branching out and learning swift.
+				</li>
+				<li>
+					<Highlight>CSS:</Highlight> I love CSS! Therefore, I love for Styled Components! I like the way
+					you can directly make changes to CSS in the file you are working on, or export it and use it
+					anywhere you want! Also, not having to compile the CSS separately is nice.
+				</li>
+				<li>
+					<Highlight>State Management:</Highlight> For state management, Redux has its place in larger
+					applications. The state tree and actions can get overly complicated and difficult to manage;
+					not to mention there is a lot of boilerplate and opportunity to misuse it. This is where
+					something like Reacts’ context API steps in; with the addition of the useContext hook, I have
+					become a convert.
+				</li>
+			</BullettedSection>
+			<BullettedSection title="Desk Set Up">
+				<li>
+					<Highlight>Monitor:</Highlight> Acer CB271HK Fully adjustable 4K 10-bit IPS monitor. I find
+					that I am a lot more productive with more desktop space, since it means I don’t need to scroll
+					as much through my code, especially if the monitor is in portrait mode; the novelty wore off
+					that quite quickly though.
+				</li>
+				<li>
+					<Highlight>Laptop:</Highlight>My current laptop is a Macbook pro 15 inch mid 2015 2.5ghz 16gb
+					ram 512gb SSD. This laptop has been a trooper, it has survived a full bottle of peroni over the
+					keyboard with no ill effects (wasn’t even my fault, I had to tear it down and clean it though).
+					I don’t see the need to replace it just yet, it still does everything I need it to do. The 16
+					inch macbook is looking like a good upgrade in a few years, especially since the keyboard
+					doesn’t break now.
+				</li>
 			</BullettedSection>
 		</>
 	)
