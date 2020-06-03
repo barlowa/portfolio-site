@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { Gutter } from '../Atoms'
+
+import { Gutter, MobileMenu, Burger } from '../Atoms'
+import Links from './Links'
 
 const StyledHeaderWrapper = styled.div`
 	width: 100%;
@@ -9,8 +11,9 @@ const StyledHeaderWrapper = styled.div`
 	top: 0;
 	background-color: ${({ theme: { header } }) => header};
 	padding: 15px 0;
+	border-bottom: 2px solid ${({ theme: { secondaryHighlight } }) => secondaryHighlight};
 
-	.positioning {
+	.position-items {
 		height: 100%;
 		display: flex;
 		justify-content: center;
@@ -28,26 +31,49 @@ const StyledHeaderWrapper = styled.div`
 			background-color: ${({ theme: { primaryHighlight } }) => primaryHighlight};
 		}
 	}
-	.navigation {
+	.desktop-navigation {
 		margin-top: 5px;
 		a {
+			transition: color 0.3s linear;
+			text-decoration: none;
 			margin: 0 15px;
+		}
+	}
+	.mobile-navigation {
+		display: none;
+	}
+
+	/* hides desktop menu and shows mobile menu */
+	@media (max-width: ${({ theme: { tabletBreakpoint } }) => tabletBreakpoint}) {
+		.position-items {
+			justify-content: space-between;
+			flex-direction: row;
+		}
+		.desktop-navigation {
+			display: none;
+		}
+		.mobile-navigation {
+			display: block;
 		}
 	}
 `
 
-const Header = () => {
+const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 	return (
 		<StyledHeaderWrapper data-testid="Header">
 			<Gutter>
-				<div className="positioning">
+				<div className="position-items">
 					<div data-testid="Logo" className="logo">
 						<Link to="/">Alex Barlow</Link>
 					</div>
-					<div className="navigation">
-						<Link to="/#projects">Recent Projects</Link>
-						<Link to="/#about">More About Me</Link>
-						<Link to="/#uses">Uses</Link>
+					<div className="desktop-navigation">
+						<Links />
+					</div>
+					<div className="mobile-navigation">
+						<Burger isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
+						<MobileMenu isOpen={isMobileMenuOpen}>
+							<Links setIsOpen={setIsMobileMenuOpen} />
+						</MobileMenu>
 					</div>
 				</div>
 			</Gutter>
