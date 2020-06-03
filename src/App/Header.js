@@ -12,8 +12,9 @@ const StyledHeaderWrapper = styled.div`
 	background-color: ${({ theme: { header } }) => header};
 	padding: 15px 0;
 	border-bottom: 2px solid ${({ theme: { secondaryHighlight } }) => secondaryHighlight};
+	z-index: 10;
 
-	.position-items {
+	.position-header-items {
 		height: 100%;
 		display: flex;
 		justify-content: center;
@@ -45,7 +46,7 @@ const StyledHeaderWrapper = styled.div`
 
 	/* hides desktop menu and shows mobile menu */
 	@media (max-width: ${({ theme: { tabletBreakpoint } }) => tabletBreakpoint}) {
-		.position-items {
+		.position-header-items {
 			justify-content: space-between;
 			flex-direction: row;
 		}
@@ -57,27 +58,38 @@ const StyledHeaderWrapper = styled.div`
 		}
 	}
 `
+// fixes edge case where mobile menu would still be displayed when resizing window
+const MobileMenuWrapper = styled.div`
+	display: none;
+	@media (max-width: ${({ theme: { tabletBreakpoint } }) => tabletBreakpoint}) {
+		display: block;
+	}
+`
 
 const Header = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 	return (
-		<StyledHeaderWrapper data-testid="Header">
-			<Gutter>
-				<div className="position-items">
-					<div data-testid="Logo" className="logo">
-						<Link to="/">Alex Barlow</Link>
+		<>
+			<StyledHeaderWrapper className="header" data-testid="Header">
+				<Gutter>
+					<div className="position-header-items">
+						<div data-testid="Logo" className="logo">
+							<Link to="/">Alex Barlow</Link>
+						</div>
+						<div className="desktop-navigation">
+							<Links />
+						</div>
+						<div className="mobile-navigation">
+							<Burger isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
+						</div>
 					</div>
-					<div className="desktop-navigation">
-						<Links />
-					</div>
-					<div className="mobile-navigation">
-						<Burger isOpen={isMobileMenuOpen} setIsOpen={setIsMobileMenuOpen} />
-						<MobileMenu isOpen={isMobileMenuOpen}>
-							<Links setIsOpen={setIsMobileMenuOpen} />
-						</MobileMenu>
-					</div>
-				</div>
-			</Gutter>
-		</StyledHeaderWrapper>
+				</Gutter>
+			</StyledHeaderWrapper>
+			<MobileMenuWrapper>
+				<MobileMenu isOpen={isMobileMenuOpen}>
+					<Links setIsOpen={setIsMobileMenuOpen} />
+				</MobileMenu>
+			</MobileMenuWrapper>
+		</>
 	)
 }
 

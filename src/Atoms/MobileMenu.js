@@ -13,8 +13,10 @@ export const StyledMenu = styled.nav`
 	left: 0;
 	transition: transform 0.3s ease-in-out;
 	transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100%)')};
+	padding: 0 40px;
 
 	@media (max-width: ${({ theme: { tabletBreakpoint } }) => tabletBreakpoint}) {
+		padding: 0;
 		width: 100%;
 	}
 
