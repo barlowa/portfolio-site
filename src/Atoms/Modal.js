@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { RemoveScrollBar } from 'react-remove-scroll-bar'
+
 import { createPortal } from 'react-dom'
 
 import styled from 'styled-components'
@@ -7,6 +9,7 @@ import styled from 'styled-components'
 import { Button } from '.'
 
 const Backdrop = styled.div`
+	z-index: 100;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -47,6 +50,7 @@ const Modal = ({ close, children }) => {
 	// }, [])
 	return createPortal(
 		<Backdrop className="backdrop">
+			<RemoveScrollBar />
 			<div className="close-button">
 				<Button onClick={close}>Close</Button>
 			</div>

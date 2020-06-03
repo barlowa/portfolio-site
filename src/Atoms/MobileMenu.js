@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { RemoveScrollBar } from 'react-remove-scroll-bar'
 
 export const StyledMenu = styled.nav`
 	display: flex;
@@ -39,6 +40,11 @@ export const StyledMenu = styled.nav`
 		}
 	}
 `
-const MobileMenu = ({ isOpen, children }) => <StyledMenu isOpen={isOpen}>{children}</StyledMenu>
+const MobileMenu = ({ isOpen, children }) => (
+	<StyledMenu isOpen={isOpen}>
+		{isOpen && <RemoveScrollBar />}
+		{children}
+	</StyledMenu>
+)
 
 export default MobileMenu
