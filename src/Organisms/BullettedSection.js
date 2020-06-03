@@ -2,25 +2,20 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { Gutter, InlineImage } from '../Atoms'
+import { Gutter, ListItems } from '../Atoms'
 import { TextBlock } from '../Molecules'
 
 const Layout = styled.div`
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-gap: 40px;
-	@media only screen and (max-width: ${({ theme: { tabletBreakpoint } }) => tabletBreakpoint}) {
-		grid-template-columns: auto;
-		grid-template-rows: auto auto;
-		justify-items: center;
-	}
+	display: block;
+	margin: 0 0 40px 0;
 `
 const BullettedSection = ({ image, children, title, imageWidth }) => {
 	return (
 		<Gutter>
 			<Layout>
-				<InlineImage src={image} maxWidth={imageWidth} />
-				<TextBlock title={title}>{children}</TextBlock>
+				<TextBlock title={title}>
+					<ListItems>{children}</ListItems>
+				</TextBlock>
 			</Layout>
 		</Gutter>
 	)
