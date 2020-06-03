@@ -3,8 +3,8 @@ const DefaultTheme = {
 	primary: '#EE664C',
 	secondary: '#4DC4CC',
 	primaryHighlight: '#F5F3DC',
-	secondaryHighlight: '#E5EBF4',
-	backgroundColour: 'white',
+	secondaryHighlight: '#e9f5f6',
+	backgroundColour: '#fbfbfb',
 	mobileBreakpoint: '750px',
 	tabletBreakpoint: '1200px',
 }

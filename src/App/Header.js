@@ -9,7 +9,6 @@ const StyledHeaderWrapper = styled.div`
 	top: 0;
 	background-color: ${({ theme: { header } }) => header};
 	padding: 15px 0;
-	font-family: consolas-regular;
 
 	.positioning {
 		height: 100%;
@@ -24,11 +23,14 @@ const StyledHeaderWrapper = styled.div`
 			text-decoration: none;
 			color: ${({ theme: { primary } }) => primary};
 		}
+		& a:hover {
+			padding: 5px;
+			background-color: ${({ theme: { primaryHighlight } }) => primaryHighlight};
+		}
 	}
 	.navigation {
 		margin-top: 5px;
 		a {
-			color: ${({ theme: { secondary } }) => secondary};
 			margin: 0 15px;
 		}
 	}
