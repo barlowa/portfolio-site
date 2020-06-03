@@ -106,7 +106,11 @@ const Home = () => {
 			<BullettedSection>
 				<p>
 					This is a short list of the hardware and software I own or use on a regular basis. Based on the
-					wes-bos <a href="uses.tech">uses.tech</a> initiative.
+					wes-bos{' '}
+					<a target="_blank" rel="noopener noreferrer" href="https://uses.tech">
+						uses.tech
+					</a>{' '}
+					initiative.
 				</p>
 			</BullettedSection>
 			<BullettedSection title="Text Editor">
