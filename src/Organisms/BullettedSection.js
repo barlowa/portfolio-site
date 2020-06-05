@@ -7,7 +7,7 @@ import { TextBlock } from '../Molecules'
 
 const Layout = styled.div`
 	display: block;
-	margin: 0 0 40px 0;
+	margin: 0 0 20px 0;
 `
 const BullettedSection = ({ children, title }) => {
 	return (
