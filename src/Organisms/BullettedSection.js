@@ -20,9 +20,7 @@ const BullettedSection = ({ children, title }) => {
 		</Gutter>
 	)
 }
-BullettedSection.defaultProps = {
-	imageWidth: '250px',
-}
+
 BullettedSection.propTypes = {
 	children: PropTypes.any.isRequired,
 	title: PropTypes.string,
