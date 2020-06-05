@@ -10,10 +10,10 @@ const ContentContainer = styled.div`
 	align-items: flex-start;
 	min-height: 100vh;
 `
-const HeroSection = ({ background, children }) => {
+const HeroSection = ({ background, mobileBackground, children }) => {
 	return (
 		<Divider>
-			<FullHeightPanel background={background}>
+			<FullHeightPanel background={background} mobileBackground={mobileBackground}>
 				<Gutter>
 					<ContentContainer>{children} </ContentContainer>
 				</Gutter>

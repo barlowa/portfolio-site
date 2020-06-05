@@ -8,6 +8,8 @@ import { useSmoothScrolling, useFetch } from '../Hooks'
 
 const cliftonBridge =
 	'https://res.cloudinary.com/dyfxobpyc/image/upload/v1590347259/Assets/clifton-suspension-bridge_b4vhzj.jpg'
+const cliftonBridgeMobile =
+	'https://res.cloudinary.com/dyfxobpyc/image/upload/v1591316753/Assets/clifton-suspension-bridge-mobile_gt49p5.jpg'
 const me =
 	'https://res.cloudinary.com/dyfxobpyc/image/upload/c_scale,w_250/v1590347259/Assets/Profile_alt.jpg'
 const infund =
@@ -28,7 +30,7 @@ const Home = () => {
 
 	return (
 		<>
-			<HeroSection background={cliftonBridge}>
+			<HeroSection background={cliftonBridge} mobileBackground={cliftonBridgeMobile}>
 				<Title>Hey!</Title>
 				<Title>I'm Alex Barlow</Title>
 				<Title>I'm a Front End Developer</Title>
