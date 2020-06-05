@@ -96,6 +96,19 @@ const Home = () => {
 					</p>
 				</Project>
 			</Divider>
+			<Divider>
+				<BoxSection title="Other Projects">
+					<InlineButtons
+						buttons={[
+							{
+								label: 'Git Hub (barlowa)',
+								onClick: () =>
+									window.open('https://github.com/barlowa', 'blank', 'noopener, noreferrer'),
+							},
+						]}
+					/>
+				</BoxSection>
+			</Divider>
 
 			<Divider id="about">
 				<ImageSection title="More About Me" image={me}>
