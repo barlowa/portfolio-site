@@ -7,7 +7,7 @@ import { Title, Highlight } from '../Atoms'
 import { useSmoothScrolling, useFetch } from '../Hooks'
 
 const cliftonBridge =
-	'https://res.cloudinary.com/dyfxobpyc/image/upload/v1590347259/Assets/clifton-suspension-bridge_b4vhzj.jpg'
+	'https://res.cloudinary.com/dyfxobpyc/image/upload/v1591390080/Assets/clifton-suspension-bridge_copy_ehduv5.jpg'
 const cliftonBridgeMobile =
 	'https://res.cloudinary.com/dyfxobpyc/image/upload/v1591316753/Assets/clifton-suspension-bridge-mobile_gt49p5.jpg'
 const me =
@@ -30,7 +30,11 @@ const Home = () => {
 
 	return (
 		<>
-			<HeroSection background={cliftonBridge} mobileBackground={cliftonBridgeMobile}>
+			<HeroSection
+				background={cliftonBridge}
+				mobileBackground={cliftonBridgeMobile}
+				backgroundColour="#badaf3"
+			>
 				<Title>Hey!</Title>
 				<Title>I'm Alex Barlow</Title>
 				<Title>I'm a Front End Developer</Title>

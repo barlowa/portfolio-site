@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -10,15 +11,26 @@ const ContentContainer = styled.div`
 	align-items: flex-start;
 	min-height: 100vh;
 `
-const HeroSection = ({ background, mobileBackground, children }) => {
+const HeroSection = ({ background, mobileBackground, backgroundColour, children }) => {
 	return (
 		<Divider>
-			<FullHeightPanel background={background} mobileBackground={mobileBackground}>
+			<FullHeightPanel
+				background={background}
+				mobileBackground={mobileBackground}
+				backgroundColour={backgroundColour}
+			>
 				<Gutter>
 					<ContentContainer>{children} </ContentContainer>
 				</Gutter>
 			</FullHeightPanel>
 		</Divider>
 	)
+}
+
+HeroSection.propTypes = {
+	background: PropTypes.string,
+	backgroundColour: PropTypes.string,
+	children: PropTypes.any.isRequired,
+	mobileBackground: PropTypes.string,
 }
 export default HeroSection
