@@ -37,7 +37,7 @@ const Project = ({ title, image, children, gallery, thumbnailWidth }) => {
 
 	const [preselectedGalleryPicture, setPreselectedGalleryPicture] = useState()
 
-	const thumbnailtransforms = `/c_scale,w_${thumbnailWidth}`
+	const thumbnailtransforms = `/q_auto,c_scale,w_${thumbnailWidth}`
 
 	function cloudinaryUrlTemplate({ version, public_id, format }, transforms) {
 		return `https://res.cloudinary.com/dyfxobpyc/image/upload${
