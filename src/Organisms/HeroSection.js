@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { FullHeightPanel, Gutter, Divider } from '../Atoms'
+import { FullHeightPanel, Gutter } from '../Atoms'
 
 const ContentContainer = styled.div`
 	display: flex;
@@ -13,17 +13,15 @@ const ContentContainer = styled.div`
 `
 const HeroSection = ({ background, mobileBackground, backgroundColour, children }) => {
 	return (
-		<Divider>
-			<FullHeightPanel
-				background={background}
-				mobileBackground={mobileBackground}
-				backgroundColour={backgroundColour}
-			>
-				<Gutter>
-					<ContentContainer>{children} </ContentContainer>
-				</Gutter>
-			</FullHeightPanel>
-		</Divider>
+		<FullHeightPanel
+			background={background}
+			mobileBackground={mobileBackground}
+			backgroundColour={backgroundColour}
+		>
+			<Gutter>
+				<ContentContainer>{children} </ContentContainer>
+			</Gutter>
+		</FullHeightPanel>
 	)
 }
 

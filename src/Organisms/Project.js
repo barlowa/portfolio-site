@@ -3,12 +3,13 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 import { TextBlock, GalleryFilmStrip, ExpandedGallery } from '../Molecules'
-import { Gutter, Divider, InlineImage } from '../Atoms'
+import { Gutter, InlineImage } from '../Atoms'
 
 const Layout = styled.div`
 	display: grid;
 	grid-template-columns: auto auto;
 	grid-gap: 40px;
+	margin-bottom: 40px;
 	.gallery-limit {
 		max-width: 500px;
 	}
@@ -37,7 +38,7 @@ const Project = ({ title, image, children, gallery, thumbnailWidth }) => {
 
 	const [preselectedGalleryPicture, setPreselectedGalleryPicture] = useState()
 
-	const thumbnailtransforms = `/q_auto,c_scale,w_${thumbnailWidth}`
+	const thumbnailtransforms = `/q_auto:best,c_scale,w_${thumbnailWidth}`
 
 	function cloudinaryUrlTemplate({ version, public_id, format }, transforms) {
 		return `https://res.cloudinary.com/dyfxobpyc/image/upload${
@@ -65,34 +66,32 @@ const Project = ({ title, image, children, gallery, thumbnailWidth }) => {
 
 	return (
 		<Gutter>
-			<Divider>
-				<Layout>
-					<div className="gallery-limit">
-						<InlineImage
-							src={image}
-							onClick={() => {
-								expandGallery(image)
-							}}
-						/>
-						{gallery && (
-							<GalleryFilmStrip
-								pictures={galleryPictures}
-								thumbnailHeight={thumbnailWidth}
-								onThumbnailClick={({ picture }) => expandGallery(picture)}
-							/>
-						)}
-					</div>
-					<TextBlock title={title}>{children}</TextBlock>
-					{isGalleryExpanded && (
-						<ExpandedGallery
-							openingPicture={preselectedGalleryPicture}
+			<Layout>
+				<div className="gallery-limit">
+					<InlineImage
+						src={image}
+						onClick={() => {
+							expandGallery(image)
+						}}
+					/>
+					{gallery && (
+						<GalleryFilmStrip
 							pictures={galleryPictures}
 							thumbnailHeight={thumbnailWidth}
-							close={() => setIsGalleryExpanded(false)}
+							onThumbnailClick={({ picture }) => expandGallery(picture)}
 						/>
 					)}
-				</Layout>
-			</Divider>
+				</div>
+				<TextBlock title={title}>{children}</TextBlock>
+				{isGalleryExpanded && (
+					<ExpandedGallery
+						openingPicture={preselectedGalleryPicture}
+						pictures={galleryPictures}
+						thumbnailHeight={thumbnailWidth}
+						close={() => setIsGalleryExpanded(false)}
+					/>
+				)}
+			</Layout>
 		</Gutter>
 	)
 }

@@ -2,13 +2,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-import { Gutter, Divider, InlineImage } from '../Atoms'
+import { Gutter, InlineImage } from '../Atoms'
 import { TextBlock } from '../Molecules'
 
 const Layout = styled.div`
 	display: grid;
 	grid-template-columns: auto auto;
 	grid-gap: 40px;
+	margin-bottom: 40px;
 	@media only screen and (max-width: ${({ theme: { tabletBreakpoint } }) => tabletBreakpoint}) {
 		grid-template-columns: auto;
 		grid-template-rows: auto auto;
@@ -18,12 +19,10 @@ const Layout = styled.div`
 const ImageSection = ({ image, children, title, imageWidth }) => {
 	return (
 		<Gutter>
-			<Divider>
-				<Layout>
-					<InlineImage src={image} maxWidth={imageWidth} />
-					<TextBlock title={title}>{children}</TextBlock>
-				</Layout>
-			</Divider>
+			<Layout>
+				<InlineImage src={image} maxWidth={imageWidth} />
+				<TextBlock title={title}>{children}</TextBlock>
+			</Layout>
 		</Gutter>
 	)
 }
