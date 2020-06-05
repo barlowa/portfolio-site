@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -44,4 +45,11 @@ const Burger = ({ isOpen, setIsOpen }) => (
 		<div className="bun" />
 	</StyledBurger>
 )
+StyledBurger.propTypes = {
+	isOpen: PropTypes.bool.isRequired,
+}
+Burger.propTypes = {
+	isOpen: PropTypes.bool.isRequired,
+	setIsOpen: PropTypes.func.isRequired,
+}
 export default Burger

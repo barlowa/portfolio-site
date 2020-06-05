@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 import { RemoveScrollBar } from 'react-remove-scroll-bar'
@@ -46,5 +47,14 @@ const MobileMenu = ({ isOpen, children }) => (
 		{children}
 	</StyledMenu>
 )
+
+StyledMenu.propTypes = {
+	isOpen: PropTypes.bool.isRequired,
+}
+
+MobileMenu.propTypes = {
+	children: PropTypes.any.isRequired,
+	isOpen: PropTypes.bool.isRequired,
+}
 
 export default MobileMenu

@@ -9,7 +9,7 @@ const Layout = styled.div`
 	display: block;
 	margin: 0 0 40px 0;
 `
-const BullettedSection = ({ image, children, title, imageWidth }) => {
+const BullettedSection = ({ children, title }) => {
 	return (
 		<Gutter>
 			<Layout>
@@ -25,8 +25,6 @@ BullettedSection.defaultProps = {
 }
 BullettedSection.propTypes = {
 	children: PropTypes.any.isRequired,
-	image: PropTypes.string,
-	imageWidth: PropTypes.string,
 	title: PropTypes.string,
 }
 

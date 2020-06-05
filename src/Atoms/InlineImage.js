@@ -23,7 +23,7 @@ InlineImage.defaultProps = {
 }
 
 InlineImage.propTypes = {
-	src: PropTypes.string,
+	src: PropTypes.string.isRequired,
 	maxWidth: PropTypes.string.isRequired,
 	onClick: PropTypes.func,
 }

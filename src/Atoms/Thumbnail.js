@@ -28,6 +28,7 @@ Thumbnail.defaultProps = {
 }
 
 Thumbnail.propTypes = {
+	onClick: PropTypes.func.isRequired,
 	src: PropTypes.string.isRequired,
 	height: PropTypes.string.isRequired,
 }

@@ -13,6 +13,7 @@ const Heading = ({ children, id }) => {
 }
 
 Heading.propTypes = {
+	id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 	children: PropTypes.string.isRequired,
 }
 

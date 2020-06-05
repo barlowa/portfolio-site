@@ -31,7 +31,15 @@ const GalleryFilmStrip = ({ pictures, thumbnailHeight, onThumbnailClick }) => {
 }
 
 GalleryFilmStrip.propTypes = {
-	pictures: PropTypes.array,
+	onThumbnailClick: PropTypes.func.isRequired,
+	pictures: PropTypes.arrayOf(
+		PropTypes.shape({
+			key: PropTypes.string.isRequired,
+			thumbnail: PropTypes.string.isRequired,
+			picture: PropTypes.string.isRequired,
+		})
+	),
+	thumbnailHeight: PropTypes.string.isRequired,
 }
 
 export default GalleryFilmStrip

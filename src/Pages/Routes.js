@@ -9,7 +9,6 @@ const Routes = () => {
 			<Route exact path="/">
 				<Home />
 			</Route>
-			{/* <Route path="/anotherpage" render={() => <div>hello</div>} /> */}
 		</Switch>
 	)
 }

@@ -28,8 +28,7 @@ const TextBlock = ({ title, children }) => {
 
 TextBlock.propTypes = {
 	title: PropTypes.string,
-	image: PropTypes.string,
-	imageWidth: PropTypes.string,
+	children: PropTypes.any.isRequired,
 }
 
 export default TextBlock

@@ -74,11 +74,13 @@ const Project = ({ title, image, children, gallery, thumbnailWidth }) => {
 								expandGallery(image)
 							}}
 						/>
-						<GalleryFilmStrip
-							pictures={galleryPictures}
-							thumbnailHeight={thumbnailWidth}
-							onThumbnailClick={({ picture }) => expandGallery(picture)}
-						/>
+						{gallery && (
+							<GalleryFilmStrip
+								pictures={galleryPictures}
+								thumbnailHeight={thumbnailWidth}
+								onThumbnailClick={({ picture }) => expandGallery(picture)}
+							/>
+						)}
 					</div>
 					<TextBlock title={title}>{children}</TextBlock>
 					{isGalleryExpanded && (
@@ -103,8 +105,9 @@ Project.defaultProps = {
 }
 
 Project.propTypes = {
-	children: PropTypes.any,
-	image: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
+	image: PropTypes.string.isRequired,
+	children: PropTypes.any.isRequired,
 	gallery: PropTypes.array,
+	thumbnailWidth: PropTypes.string.isRequired,
 }

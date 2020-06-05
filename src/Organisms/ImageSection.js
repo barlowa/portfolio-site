@@ -31,10 +31,10 @@ ImageSection.defaultProps = {
 	imageWidth: '250px',
 }
 ImageSection.propTypes = {
-	children: PropTypes.any.isRequired,
 	image: PropTypes.string,
-	imageWidth: PropTypes.string,
+	children: PropTypes.any.isRequired,
 	title: PropTypes.string,
+	imageWidth: PropTypes.string,
 }
 
 export default ImageSection
