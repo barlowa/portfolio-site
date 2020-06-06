@@ -5,12 +5,12 @@ import styled from 'styled-components'
 /* display: flex;
 overflow-y: scroll;
 width: 100%; */
+// -webkit-overflow-scrolling: touch;
+/* overflow-scrolling: touch; */
 
 const GalleryWrapper = styled.div`
 	overflow-x: auto;
 	overflow-y: hidden;
-	overflow-scrolling: touch;
-	-webkit-overflow-scrolling: touch;
 	white-space: nowrap;
 	text-align: center;
 `
