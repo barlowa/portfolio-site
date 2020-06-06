@@ -3,11 +3,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const StyledBurger = styled.button`
-	width: 25px;
-	height: 15px;
+	width: 50px;
+	height: 50px;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
+	align-items: center;
 	background: transparent;
 	border: none;
 	cursor: pointer;
@@ -18,6 +18,13 @@ export const StyledBurger = styled.button`
 		outline: none;
 	}
 
+	.burger-size {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		width: 25px;
+		height: 15px;
+	}
 	.bun {
 		width: 25px;
 		height: 3px;
@@ -40,9 +47,11 @@ export const StyledBurger = styled.button`
 `
 
 const Burger = ({ isOpen, setIsOpen }) => (
-	<StyledBurger isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
-		<div className="bun" />
-		<div className="bun" />
+	<StyledBurger className="burger" isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+		<div className="burger-size">
+			<div className="bun" />
+			<div className="bun" />
+		</div>
 	</StyledBurger>
 )
 StyledBurger.propTypes = {
