@@ -1,7 +1,7 @@
 {
 	"name": "portfolio-site",
 	"homepage": "https://www.alexbarlow.co.uk",
-	"version": "0.1.0",
+	"version": "1.1.0",
 	"private": true,
 	"dependencies": {
 		"@types/jest": "^26.0.23",
