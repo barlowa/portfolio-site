@@ -1,0 +1,9 @@
+{
+	"prettier.configPath": ".prettierrc",
+	"eslint.validate": [],
+	"editor.formatOnSave": true,
+	"eslint.codeAction.showDocumentation": {
+		"enable": true
+	},
+	"editor.defaultFormatter": "esbenp.prettier-vscode"
+}
